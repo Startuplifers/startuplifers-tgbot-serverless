@@ -21,7 +21,7 @@ describe("Test api", () => {
 
 describe("Test index function", () => {
   test("Sending all of the jobs when store is empty", async () => {
-    const emptyJobs = [{}];
+    const emptyJobs = [];
     await storeJobs(bucketName, "jobs.json", emptyJobs);
     const res = await main();
     expect(res.body.jobsSent.length).toEqual(apiJobs.length);
