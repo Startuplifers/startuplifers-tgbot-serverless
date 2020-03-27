@@ -27,9 +27,9 @@ export async function main(event, context, callback) {
 
   if (newJobs) {
     const promises = newJobs.map(job => {
-      const channelName = channels[job.categories.department]
+      const channelName = channels[job.categories.department];
       if (channelName) {
-        return bot.sendMessage(channelName, `${job.hostedUrl}\n\nPosition: ${job.text}\nLocation: ${job.categories.location}\nCommitment: ${job.categories.commitment}`)
+        return bot.sendMessage(channelName, `${job.hostedUrl}\n\nPosition: ${job.text}\nLocation: ${job.categories.location}\nCommitment: ${job.categories.commitment}`);
       }
     });
     await Promise.all(promises);
